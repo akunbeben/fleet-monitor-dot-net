@@ -15,6 +15,6 @@ namespace FleetMonitoring.Entity.Models
 
         public string Description { get; set; }
 
-        public int OwnerId { get; set; }
+        public Owner Owner { get; set; }
     }
 }
