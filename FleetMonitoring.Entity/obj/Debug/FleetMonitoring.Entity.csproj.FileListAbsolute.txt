@@ -4,3 +4,9 @@ D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\obj\Debug\FleetMonitoring
 D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\obj\Debug\FleetMonitoring.Entity.csproj.CoreCompileInputs.cache
 D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\obj\Debug\FleetMonitoring.Entity.dll
 D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\obj\Debug\FleetMonitoring.Entity.pdb
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\bin\Debug\FleetMonitoring.Entity.dll.config
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\bin\Debug\EntityFramework.dll
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\bin\Debug\EntityFramework.xml
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Entity\obj\Debug\FleetMonitoring.Entity.csproj.CopyComplete

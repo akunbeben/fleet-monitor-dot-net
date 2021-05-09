@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Units";
+}
+
+<div class="content">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header justify-content-center">
+                    units
+                    <div class="float-right">
+                        @Html.ActionLink("Create", "Create", "Unit", null, new { @class = "btn btn-primary btn-sm" })
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">#</th>
+                                <th>Unit ID</th>
+                                <th>Name</th>
+                                <th>Unit Owner</th>
+                                <th class="text-center" style="width: 200px;">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @if (ViewBag.units.Count == 0)
+                            {
+                                <tr>
+                                    <td colspan="3" class="text-center">Data of Unit is empty.</td>
+                                </tr>
+                            }
+
+                            @foreach (var units in ViewBag.Units)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@units.Identity</td>
+                                    <td>@units.Name</td>
+                                    <td>@units.Owner.Name</td>
+                                    <td class="text-center">
+                                        <a href="@Url.Action("Edit", "Unit", new { id = units.UnitId })" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                        <a href="@Url.Action("Delete", "Unit", new { id = units.UnitId })" class="btn btn-danger btn-sm" onclick="event.preventDefault(); document.getElementById('@string.Format("delete-form-{0}", @units.UnitId)').submit();"><i class="fas fa-trash-alt"></i> Delete</a>
+
+                                        <form id="delete-form-@units.UnitId" action="@Url.Action("Delete", "Owner", new { id = units.UnitId })" method="POST" class="d-none">
+                                            @Html.AntiForgeryToken()
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

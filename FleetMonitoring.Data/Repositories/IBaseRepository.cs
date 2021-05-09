@@ -8,7 +8,8 @@ namespace FleetMonitoring.Data.Repositories
     public interface IBaseRepository<TEntity> where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+        TEntity Find(Expression<Func<TEntity, bool>> predicate);
+        IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> predicate);
 
         TEntity Get(int id);
         TEntity Save(TEntity entity);
@@ -18,36 +19,36 @@ namespace FleetMonitoring.Data.Repositories
 
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
-        private readonly ApplicationDBContext _context;
+        protected readonly ApplicationDBContext _context;
 
         public BaseRepository(ApplicationDBContext context)
         {
             _context = context;
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return _context.Set<TEntity>().ToList();
         }
 
-        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        public virtual TEntity Find(Expression<Func<TEntity, bool>> predicate)
         {
-            return _context.Set<TEntity>().Where(predicate);
+            return _context.Set<TEntity>().Where(predicate).FirstOrDefault();
         }
 
-        public TEntity Get(int id)
+        public virtual TEntity Get(int id)
         {
             return _context.Set<TEntity>().Find(id);
         }
 
-        public TEntity Save(TEntity entity)
+        public virtual TEntity Save(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
             _context.SaveChanges();
             return entity;
         }
 
-        public TEntity Update(int id, TEntity entity)
+        public virtual TEntity Update(int id, TEntity entity)
         {
             if (entity == null)
                 return null;
@@ -63,7 +64,7 @@ namespace FleetMonitoring.Data.Repositories
             return current;
         }
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             TEntity current = Get(id);
 
@@ -72,6 +73,11 @@ namespace FleetMonitoring.Data.Repositories
 
             _context.Set<TEntity>().Remove(current);
             _context.SaveChanges();
+        }
+
+        public virtual IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> predicate)
+        {
+            return _context.Set<TEntity>().Where(predicate);
         }
     }
 }

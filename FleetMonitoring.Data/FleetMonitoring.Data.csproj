@@ -44,6 +44,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Helpers.Crypto, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Helpers.Crypto.3.2.3\lib\net40\System.Web.Helpers.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,28 +56,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDBContext.cs" />
-    <Compile Include="Migrations\202105052109164_InitializeMigration.cs" />
-    <Compile Include="Migrations\202105052109164_InitializeMigration.designer.cs">
-      <DependentUpon>202105052109164_InitializeMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202105081540009_Initial.cs" />
+    <Compile Include="Migrations\202105081540009_Initial.designer.cs">
+      <DependentUpon>202105081540009_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105052114095_CreateUserAndRoleTable.cs" />
-    <Compile Include="Migrations\202105052114095_CreateUserAndRoleTable.designer.cs">
-      <DependentUpon>202105052114095_CreateUserAndRoleTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105052115548_CreateOwnerAndUnitTable.cs" />
-    <Compile Include="Migrations\202105052115548_CreateOwnerAndUnitTable.designer.cs">
-      <DependentUpon>202105052115548_CreateOwnerAndUnitTable.cs</DependentUpon>
+    <Compile Include="Migrations\202105081541436_CreateOwnerAndUnitTable.cs" />
+    <Compile Include="Migrations\202105081541436_CreateOwnerAndUnitTable.designer.cs">
+      <DependentUpon>202105081541436_CreateOwnerAndUnitTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Persistance\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IBaseRepository.cs" />
     <Compile Include="Repositories\IOwnerRepository.cs" />
-    <Compile Include="Repositories\IRoleRepository.cs" />
     <Compile Include="Repositories\IUnitRepository.cs" />
-    <Compile Include="Repositories\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FleetMonitoring.Common\FleetMonitoring.Common.csproj">
+      <Project>{a612a0e7-b4b0-4476-8a52-03a871c5eb0a}</Project>
+      <Name>FleetMonitoring.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FleetMonitoring.Entity\FleetMonitoring.Entity.csproj">
       <Project>{e10d206f-5b04-410c-a5e7-4310da2f1f09}</Project>
       <Name>FleetMonitoring.Entity</Name>
@@ -85,14 +85,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105052109164_InitializeMigration.resx">
-      <DependentUpon>202105052109164_InitializeMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105081540009_Initial.resx">
+      <DependentUpon>202105081540009_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105052114095_CreateUserAndRoleTable.resx">
-      <DependentUpon>202105052114095_CreateUserAndRoleTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105052115548_CreateOwnerAndUnitTable.resx">
-      <DependentUpon>202105052115548_CreateOwnerAndUnitTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105081541436_CreateOwnerAndUnitTable.resx">
+      <DependentUpon>202105081541436_CreateOwnerAndUnitTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,13 @@ namespace FleetMonitoring.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class CreateUserAndRoleTable : IMigrationMetadata
+    public sealed partial class CreateOwnerAndUnitTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateUserAndRoleTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateOwnerAndUnitTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105052114095_CreateUserAndRoleTable"; }
+            get { return "202105081541436_CreateOwnerAndUnitTable"; }
         }
         
         string IMigrationMetadata.Source

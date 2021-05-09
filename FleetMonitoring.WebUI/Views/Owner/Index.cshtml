@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Owners";
+}
+
+<div class="content">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header justify-content-center">
+                    Owners
+                    <div class="float-right">
+                        @Html.ActionLink("Create", "Create", "Owner", null, new { @class = "btn btn-primary btn-sm" })
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">#</th>
+                                <th>Name</th>
+                                <th class="text-center" style="width: 200px;">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @if (ViewBag.Owners.Count == 0)
+                            {
+                                <tr>
+                                    <td colspan="3" class="text-center">Data Owners is empty.</td>
+                                </tr>
+                            }
+
+                            @foreach (var owners in ViewBag.Owners)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@owners.Name</td>
+                                    <td class="text-center">
+                                        <a href="@Url.Action("Edit", "Owner", new { id = owners.OwnerId })" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                        <a href="@Url.Action("Delete", "Owner", new { id = owners.OwnerId })" class="btn btn-danger btn-sm" onclick="event.preventDefault(); document.getElementById('@string.Format("delete-form-{0}", @owners.OwnerId)').submit();"><i class="fas fa-trash-alt"></i> Delete</a>
+
+                                        <form id="delete-form-@owners.OwnerId" action="@Url.Action("Delete", "Owner", new { id = owners.OwnerId })" method="POST" class="d-none">
+                                            @Html.AntiForgeryToken()
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

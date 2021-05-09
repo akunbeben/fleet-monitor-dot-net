@@ -12,7 +12,11 @@ D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.D
 D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.Data.csproj.CopyComplete
 D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.Data.dll
 D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.Data.pdb
-D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.Data.Migrations.InitializeMigration.resources
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\bin\Debug\FleetMonitoring.Entity.dll.config
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\bin\Debug\FleetMonitoring.Common.dll
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\bin\Debug\FleetMonitoring.Common.pdb
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\bin\Debug\System.Web.Helpers.Crypto.dll
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\bin\Debug\System.Web.Helpers.Crypto.pdb
+D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.Data.Migrations.Initial.resources
 D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.Data.csproj.GenerateResource.cache
-D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.Data.Migrations.CreateUserAndRoleTable.resources
 D:\Work\Project\FleetMonitoring\FleetMonitoring.Data\obj\Debug\FleetMonitoring.Data.Migrations.CreateOwnerAndUnitTable.resources

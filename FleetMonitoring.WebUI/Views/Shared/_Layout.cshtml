@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - ASP.NET</title>
+    <title>@ViewBag.Title - Fleet Monitoring</title>
     @Styles.Render("~/Content/css")
 </head>
 <body class="p-0">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                @Html.ActionLink("ASP.NET", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("Fleet Monitoring", "Index", "Home", null, new { @class = "navbar-brand" })
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,8 +24,8 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                        <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                        <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Owners", "Index", "Owner", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Fleet", "Index", "Unit", null, new { @class = "nav-link" })</li>
                     </ul>
                 </div>
             </div>
