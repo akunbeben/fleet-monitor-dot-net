@@ -1,7 +1,6 @@
 ﻿using FleetMonitoring.Data.Repositories;
 using FleetMonitoring.WebUI.Models;
 using FleetMonitoring.WebUI.Services;
-using FleetMonitoring.WebUI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +25,7 @@ namespace FleetMonitoring.WebUI.Controllers
         {
             var units = _unitRepository.GetAll();
 
-            ViewData["Units"] = units;
-
-            return View();
+            return View(units);
         }
 
         // GET: Unit/Create
@@ -41,6 +38,7 @@ namespace FleetMonitoring.WebUI.Controllers
 
         // POST: Unit/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(UnitModel collection)
         {
             if (!ModelState.IsValid)
@@ -58,45 +56,44 @@ namespace FleetMonitoring.WebUI.Controllers
         // GET: Unit/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var unit = UnitService.MappingToView(_unitRepository.Get(id));
+            ViewData["Owners"] = _ownerRepository.GetAll();
+
+            return View(unit);
         }
 
         // POST: Unit/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, UnitModel collection)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                ViewData["Owners"] = _ownerRepository.GetAll();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
                 return View();
             }
-        }
 
-        // GET: Unit/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
+            _unitRepository.Update(id, UnitService.MappingToModel(collection, true));
+
+            return RedirectToAction("Index");
         }
 
         // POST: Unit/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            _unitRepository.Delete(id);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _unitRepository.Dispose();
+            _ownerRepository.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

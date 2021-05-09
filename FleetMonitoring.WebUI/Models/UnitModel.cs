@@ -7,7 +7,7 @@ namespace FleetMonitoring.WebUI.Models
     {
         public int UnitId { get; set; }
 
-        [Display(Name = "Identity")]
+        [Display(Name = "Unit ID")]
         [Required(ErrorMessage = "Unit Identity is required")]
         public string Identity { get; set; }
         
@@ -19,7 +19,7 @@ namespace FleetMonitoring.WebUI.Models
         [Required(ErrorMessage = "Unit Description is required")]
         public string Description { get; set; }
 
-        [Display(Name = "Owner")]
+        [Display(Name = "Unit Owner")]
         [Required(ErrorMessage = "Unit must have owner.")]
         public int OwnerId { get; set; }
     }

@@ -5,7 +5,6 @@ using Mapster;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using FleetMonitoring.WebUI.ViewModels;
 
 namespace FleetMonitoring.WebUI.Services
 {
