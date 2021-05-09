@@ -89,6 +89,15 @@ namespace FleetMonitoring.WebUI.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Location(int id)
+        {
+            var unit = _unitRepository.Get(id);
+
+            ViewData["Location"] = UnitService.MockLocation();
+
+            return View(unit);
+        }
+
         protected override void Dispose(bool disposing)
         {
             _unitRepository.Dispose();

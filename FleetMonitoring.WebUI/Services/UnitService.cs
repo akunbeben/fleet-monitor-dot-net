@@ -31,5 +31,19 @@ namespace FleetMonitoring.WebUI.Services
 
             return unit;
         }
+
+        public static string MockLocation()
+        {
+            string[] coordinates = new string[5]
+            {
+                "-2.293974605144342,114.87087965011598",
+                "-2.832958795292959,114.7855854034424",
+                "-3.762121219821541,114.43393707275392",
+                "-4.028681556578677,116.03265702724458",
+                "-3.3300042181994853,114.55140709877016"
+            };
+
+            return coordinates[new Random().Next(0, coordinates.Length)];
+        }
     }
 }

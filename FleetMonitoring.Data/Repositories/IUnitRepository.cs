@@ -19,6 +19,11 @@ namespace FleetMonitoring.Data.Repositories
 
         }
 
+        public override Unit Get(int id)
+        {
+            return _context.Set<Unit>().Include("Owner").FirstOrDefault(entity => entity.UnitId == id);
+        }
+
         public override IEnumerable<Unit> GetAll()
         {
             return _context.Set<Unit>().Include("Owner").ToList();
