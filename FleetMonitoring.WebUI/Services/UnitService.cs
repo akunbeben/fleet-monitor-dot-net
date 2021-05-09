@@ -2,9 +2,6 @@
 using FleetMonitoring.WebUI.Models;
 using System;
 using Mapster;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace FleetMonitoring.WebUI.Services
 {

@@ -6,7 +6,6 @@ using FleetMonitoring.WebUI.Models;
 using Mapster;
 using System.Text;
 using System.Text.RegularExpressions;
-using FleetMonitoring.Data.Repositories;
 
 namespace FleetMonitoring.WebUI.Services
 {
