@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace FleetMonitoring.WebUI.Controllers
 {
+    [Authorize]
     public class UnitController : Controller
     {
         protected readonly IUnitRepository _unitRepository;

@@ -1,6 +1,8 @@
 ﻿using FleetMonitoring.Data.Repositories;
+using FleetMonitoring.WebUI.Controllers;
 using System.Web.Mvc;
 using Unity;
+using Unity.Injection;
 using Unity.Mvc5;
 
 namespace FleetMonitoring.WebUI.App_Start
@@ -13,6 +15,7 @@ namespace FleetMonitoring.WebUI.App_Start
 
             container.RegisterType<IOwnerRepository, OwnerRepository>();
             container.RegisterType<IUnitRepository, UnitRepository>();
+            container.RegisterType<AccountController>(new InjectionConstructor());
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
